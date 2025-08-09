@@ -1,0 +1,74 @@
+    /* Layout to keep footer at bottom */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      background: #1767F0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: transparent !important;
+    }
+    .navbar-brand {
+      color: white;
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .navbar-brand:hover {
+      color: white;
+    }
+    .nav-link {
+      color: #8CB6FF;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    .nav-link:hover {
+      color: #F5E8E8;
+    }
+    .nav-link.active {
+      color: #F5E8E8;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      background: white;
+      color: #000;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 100%;
+      padding: 20px;
+    }
+    .footer-text {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Social media buttons */
+    .fa {
+      padding: 10px;
+      font-size: 20px;
+      width: 40px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+    .fa:hover {
+      opacity: 0.7;
+    }
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+    .fa-linkedin {
+      background: #007bb5;
+      color: white;
+    }
+ 
