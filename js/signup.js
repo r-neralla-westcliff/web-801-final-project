@@ -5,10 +5,19 @@ function mockPost(url, data) {
     setTimeout(() => {
       resolve({
         ok: true,
-        json: async () => ({ id: 12345, status: "created" })
+        json: async () => ({ id: 12345, status: "created" }),
       });
     }, 900);
   });
+}
+
+function showLoader() {
+  const el = document.getElementById("pageLoader");
+  if (el) el.classList.remove("d-none");
+}
+function hideLoader() {
+  const el = document.getElementById("pageLoader");
+  if (el) el.classList.add("d-none");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,7 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const toastEl = document.getElementById("successToast");
-  const toast = (window.bootstrap && toastEl) ? new bootstrap.Toast(toastEl) : null;
+  const toast =
+    window.bootstrap && toastEl ? new bootstrap.Toast(toastEl) : null;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -48,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Submitting...
       `;
     }
-
+    showLoader();
     try {
       const res = await mockPost("/api/signup", payload);
       if (!res.ok) throw new Error("mock error");
@@ -59,13 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
       form.classList.remove("was-validated");
 
       const target = "./dashboard.html";
-      setTimeout(() => {
-        window.location.replace(target);
-      }, toast ? 700 : 0);
+      setTimeout(
+        () => {
+          window.location.replace(target);
+        },
+        toast ? 1000 : 0
+      );
     } catch (err) {
       console.error("[app] submit error:", err);
       alert("Something went wrong while submitting. Please try again.");
     } finally {
+      hideLoader();
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = original;

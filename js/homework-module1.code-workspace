@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../homework-module1"
+		},
+		{
+			"path": "../../m2-w2-d2-exercise"
+		},
+		{
+			"path": "../../-m2-w2-d1-exercise"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "-m2-w2-d1-exercise"
+	}
+}

@@ -1,8 +1,16 @@
-/*sign in */
-
 :root {
     --brand-blue: #0b63e6;
     --brand-blue-dark: #084cb0;
+}
+
+html,
+body {
+    background: #1767F0;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -11,6 +19,31 @@ body {
 
 .navbar-brand {
     font-weight: 700;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.nav-link {
+    color: #8CB6FF;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.nav-link:hover {
+    color: #F5E8E8;
+}
+
+.nav-link.active {
+    color: #F5E8E8;
+    font-weight: 500;
 }
 
 .hero {
@@ -159,4 +192,51 @@ footer {
 .social a:hover {
     background: #e6eefc;
     color: var(--brand-blue-dark);
+}
+
+/*Loader CSS */
+.loader-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    backdrop-filter: blur(1px);
+    display: grid;
+    place-items: center;
+    z-index: 2000;
+    /* above toast and navbar */
+}
+
+.loader-card {
+    background: #fff;
+    padding: 1.25rem 1.5rem;
+    border-radius: .75rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+    min-width: 260px;
+}
+
+
+.main {
+    min-height: 88vh;
+}
+
+/* Form styling */
+.contact-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-control {
+    border-radius: 6px;
+}
+
+.btn-submit {
+    background-color: #8CB6FF;
+    color: white;
+    font-weight: 500;
+    border: none;
+}
+
+.btn-submit:hover {
+    background-color: #6a9efb;
 }
